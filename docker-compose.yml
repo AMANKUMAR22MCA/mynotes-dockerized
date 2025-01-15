@@ -1,0 +1,49 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres-container
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: notesdb
+    ports:
+      - "5432:5432"
+    # networks:
+    #   - my_network
+
+  frontend:
+    build: ./frontend
+    container_name: react-container
+    ports:
+      - "8080:80"  # Expose React app on port 8080
+    # networks:
+    #   - my_network
+    environment:
+      - REACT_APP_API_URL=http://backend:8000/api/v1  # Connect to backend using service name
+
+  backend:
+    build: ./backend
+    container_name: backend-container  # Unique name for backend service
+    ports:
+      - "8000:8000"  # Expose backend app on a separate port
+    # networks:
+    #   - my_network
+    links:
+      - db:db  
+    restart: on-failure:5  
+    environment:
+      - DJANGO_ALLOWED_HOSTS=backend-container, localhost, host.docker.internal
+      - DB_HOST=db  # Ensure DB_HOST is set to db (the service name for PostgreSQL)
+      - DB_PORT=5432
+      - DB_NAME=notesdb
+      - DB_USER=admin
+      - DB_PASSWORD=password123
+    volumes:
+      - ./backend:/app  # Mount the backend code
+    depends_on:
+      - db  # Ensure that the backend service depends on db service
+
+# networks:
+#   my_network:
+#     driver: bridge
+
