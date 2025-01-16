@@ -9,7 +9,7 @@ const NotesListPages = () => {
   },[])
 
   let getNotes = async()=>{
-    let response = await fetch('http://backend:8000/api/v1/notes/')
+    let response = await fetch('http://localhost:8000/api/v1/notes/')
     let data = await response.json()
     console.log('data',data);
     
