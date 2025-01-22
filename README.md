@@ -47,29 +47,8 @@ Follow these steps to get the application running locally:
    git clone https://github.com/your-username/notes-app.git
    cd notes-app
 # Folder Structure
-.
-├── backend/
-│   ├── Dockerfile
-│   ├── manage.py
-│   ├── mynotes/
-│   │   ├── settings.py
-│   │   └── ...
-│   ├── notes/
-│   │   ├── models.py
-│   │   ├── views.py
-│   │   ├── serializers.py
-│   │   └── ...
-│   └── requirements.txt
-├── frontend/
-│   ├── Dockerfile
-│   ├── src/
-│   │   ├── components/
-│   │   ├── App.js
-│   │   └── ...
-│   ├── nginx.conf
-│   └── ...
-├── docker-compose.yml
-└── README.md
+![image](https://github.com/user-attachments/assets/66c95c0e-83a9-40f1-a428-4be86d95217d)
+
 
 
 # API EndPoints
