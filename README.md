@@ -63,3 +63,75 @@ Follow these steps to get the application running locally:
 | PUT         | `/api/v1/notes/{id}/` | Update a specific note.             |
 | DELETE      | `/api/v1/notes/{id}/` | Delete a specific note.             |
 
+
+
+## Mixins Used 🔗  
+
+The `NoteViewSet` class uses the following **mixins** to handle CRUD operations:
+
+| Mixin                | Purpose                        |
+|----------------------|--------------------------------|
+| `ListModelMixin`     | Lists all notes               |
+| `RetrieveModelMixin` | Retrieves a single note by ID |
+| `CreateModelMixin`   | Creates new notes             |
+| `UpdateModelMixin`   | Updates existing notes        |
+| `DestroyModelMixin`  | Deletes notes                 |
+
+
+# Backend Code 📂  
+
+This backend is built with Django and uses Django REST framework to expose APIs for managing notes.  
+
+---
+
+## Views  
+
+```python
+from rest_framework.viewsets import GenericViewSet
+from rest_framework.mixins import (
+    ListModelMixin,
+    RetrieveModelMixin,
+    CreateModelMixin,
+    UpdateModelMixin,
+    DestroyModelMixin,
+)
+from .models import Note
+from .serializers import NoteSerializer
+
+class NoteViewSet(
+    ListModelMixin,
+    RetrieveModelMixin,
+    CreateModelMixin,
+    UpdateModelMixin,
+    DestroyModelMixin,
+    GenericViewSet
+):
+    queryset = Note.objects.all().order_by('-updated')
+    serializer_class = NoteSerializer
+
+## Technology Stack 🛠️  
+
+**Frontend:**  
+- React  
+- Nginx (as the web server)  
+
+**Backend:**  
+- Django REST Framework  
+
+**Database:**  
+- PostgreSQL  
+
+**DevOps:**  
+- Docker and Docker Compose  
+
+---
+
+## Contributing 🤝  
+
+We welcome contributions! If you'd like to contribute, please follow these steps:  
+
+1. **Fork** the repository.  
+2. Create a **new feature branch**.  
+   ```bash
+   git checkout -b feature-name
+
