@@ -49,6 +49,8 @@ Follow these steps to get the application running locally:
 # Folder Structure
 ![image](https://github.com/user-attachments/assets/66c95c0e-83a9-40f1-a428-4be86d95217d)
 
+# Sample Image
+![image](https://github.com/user-attachments/assets/fcb96827-55b8-4437-b93c-f953bbfd5c84)
 
 
 # API EndPoints
