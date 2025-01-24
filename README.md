@@ -27,8 +27,7 @@ A simple yet powerful Notes application built with **React** (Frontend), **Djang
    PostgreSQL stores all notes data, ensuring reliability and scalability for data operations.
 
 4. **Dockerized Setup**:  
-   All components (frontend, backend, and database) are containerized using Docker, and communication happens within a shared Docker network.
-
+   All components (frontend with Nginx, backend, and database) are containerized using Docker, and communication happens within a shared Docker network.
 ---
 
 ## Installation and Setup ⚙️  
