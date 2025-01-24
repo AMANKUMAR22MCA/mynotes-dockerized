@@ -14,6 +14,9 @@ A simple yet powerful Notes application built with **React** (Frontend), **Djang
 
 ---
 
+![WhatsApp Image 2025-01-24 at 23 45 29_a854d764](https://github.com/user-attachments/assets/cccf8e01-cee2-441e-a910-a3de784d96cf)
+
+
 ## Architecture 🏗️
 
 **Frontend (React + Nginx):** ➡️ **Backend (Django)** ➡️ **Database (PostgreSQL)**  
