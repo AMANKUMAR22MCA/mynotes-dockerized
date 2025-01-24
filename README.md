@@ -16,11 +16,10 @@ A simple yet powerful Notes application built with **React** (Frontend), **Djang
 
 ## Architecture 🏗️
 
-**Frontend (React)** ➡️ **Backend (Django)** ➡️ **Database (PostgreSQL)**  
+**Frontend (React + Nginx):** ➡️ **Backend (Django)** ➡️ **Database (PostgreSQL)**  
 
-1. **Frontend (React)**:  
-   The user interacts with the application through the React-based frontend. HTTP requests are made to the backend API for data operations.
-
+1. **Frontend (React + Nginx):**:  
+   The user interacts with the application through the React-based frontend, which is served using Nginx for fast and efficient delivery. HTTP requests are made to the backend API for data operation
 2. **Backend (Django)**:  
    The Django backend receives requests from the React frontend, processes them, interacts with the PostgreSQL database, and returns appropriate responses.
 
